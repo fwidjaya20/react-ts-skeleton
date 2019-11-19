@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 const PUBLIC_PATH = process.env.PUBLIC_PATH;
+const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = [
     {
@@ -14,12 +15,12 @@ module.exports = [
         entry: "./apps/web/src/index.tsx",
         output: {
             path: path.join(__dirname, "/dist/web"),
-            filename: "[name]-[hash].js",
-            chunkFilename: "[name]-[hash].js",
+            filename: NODE_ENV === "production" ? "[name]-[contenthash].js" : "[name]-[hash].js",
+            chunkFilename: NODE_ENV === "production" ? "[name]-[contenthash].js" : "[name]-[hash].js",
             publicPath: PUBLIC_PATH
         },
         resolve: {
-            extensions: [".js", ".ts", ".tsx"],
+            extensions: [".js", ".ts", ".tsx", ".scss"],
             alias: {
                 "@skeleton/web": path.resolve(__dirname, "apps", "web", "src"),
                 "@skeleton/domains": path.resolve(__dirname, "src", "domains"),
@@ -30,6 +31,14 @@ module.exports = [
             new CleanWebpackPlugin.CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public', 'index.html'),
+                minify: {
+                    minifyJS: true,
+                    minifyCSS: true,
+                    removeComments: true,
+                    useShortDoctype: true,
+                    collapseWhitespace: true,
+                    collapseInlineTagWhitespace: true,
+                },
             }),
             new MiniCSSExtractPlugin({
                 filename: "[name]-[hash].css",
