@@ -1,0 +1,18 @@
+@import '../../../../../styles/variables';
+
+.landing-top-bar {
+	position: relative;
+	background-color: $primary;
+	padding: 76px 16px;
+
+	.logo {
+		position: relative;
+		display: block;
+
+		> img {
+			width: 128px;
+			height: 128px;
+			object-fit: contain;
+		}
+	}
+}

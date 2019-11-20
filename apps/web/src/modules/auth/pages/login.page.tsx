@@ -1,11 +1,13 @@
-import * as React from "react";
+import React, { Component } from 'react';
 
-export default class LoginPage extends React.PureComponent<any, any> {
-    render() {
-        return (
-            <div>
-                <h1> Hello Worlds </h1>
-            </div>
-        )
-    }
-};
+class LoginPage extends Component<any, any> {
+	render() {
+		return (
+			<div>
+				<h1> Login Page </h1>
+			</div>
+		);
+	}
+}
+
+export default LoginPage;

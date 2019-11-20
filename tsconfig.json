@@ -1,21 +1,25 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "./",
-        "declaration": false,
-        "experimentalDecorators": true,
-        "jsx": "react",
-        "lib": ["es6", "es7", "dom"],
-        "moduleResolution": "node",
-        "paths": {
-            "@skeleton/web/*": ["apps/web/src/*"],
-            "@skeleton/domains/*": ["src/domains/*"],
-            "@skeleton/shared/*": ["src/shared/*"]
-        },
-        "sourceMap": true,
-        "target": "es5"
-    },
-    "exclude": ["dist", "node_modules"]
+	"compileOnSave": true,
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./",
+		"declaration": false,
+		"experimentalDecorators": true,
+		"noImplicitReturns": true,
+		"removeComments": true,
+		"jsx": "react",
+		"lib": ["es6", "es7", "dom"],
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"module": "esnext",
+		"paths": {
+			"@skeleton/web/*": ["apps/web/src/*"],
+			"@skeleton/domains/*": ["src/domains/*"],
+			"@skeleton/shared/*": ["src/shared/*"]
+		},
+		"sourceMap": true,
+		"target": "es5"
+	},
+	"exclude": ["dist", "node_modules"]
 }

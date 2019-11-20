@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+@import '../../../styles/component';
+@import '../../../styles/bootstrap-grid.min.css';
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background-color: $white;
+	padding: 0;
+	margin: 0;
+}
