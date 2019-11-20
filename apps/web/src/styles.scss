@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import '~antd/dist/antd.min.css';
 @import '../../../styles/variables';
 @import '../../../styles/component';
 @import '../../../styles/bootstrap-grid.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 html,
 body {
@@ -9,4 +12,6 @@ body {
 	background-color: $white;
 	padding: 0;
 	margin: 0;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 14px;
 }

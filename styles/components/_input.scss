@@ -1,0 +1,25 @@
+input {
+	&.ant-input {
+		background-color: $soft-gray;
+		border-color: $input-border-color;
+		height: 44px;
+
+		&:hover,
+		&:focus {
+			border-color: $primary;
+		}
+
+		&:focus {
+			box-shadow: none !important;
+			outline: none !important;
+		}
+	}
+}
+
+.ant-input-affix-wrapper {
+	&:hover {
+		.ant-input {
+			border-color: $primary !important;
+		}
+	}
+}

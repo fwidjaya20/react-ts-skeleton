@@ -17,9 +17,7 @@ class LandingTemplate extends PureComponent<any, any> {
 					</NavLink>
 				</section>
 
-				<section className="container">
-					<RouterOutlet routes={LANDING_ROUTES} />
-				</section>
+				<RouterOutlet routes={LANDING_ROUTES} />
 			</Fragment>
 		);
 	}

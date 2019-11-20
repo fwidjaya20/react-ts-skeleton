@@ -16,3 +16,20 @@
 		}
 	}
 }
+
+.landing-top-bar + section:last-of-type {
+	margin-bottom: 32px;
+}
+
+.landing-form {
+	position: relative;
+	margin: -72px auto 32px;
+	padding: 32px 24px;
+}
+
+.landing-box {
+	border-radius: $box-radius;
+	-webkit-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+	background-color: #ffffff;
+}

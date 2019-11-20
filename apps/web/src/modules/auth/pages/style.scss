@@ -1,0 +1,18 @@
+@import '../../../../../../styles/variables';
+
+.landing-form {
+	width: 420px;
+	max-width: 420px;
+}
+
+.landing-form .logo {
+	background: $primary;
+	color: $white;
+	width: 60px;
+	height: 60px;
+	border-radius: $full-radius;
+	line-height: 60px;
+	font-size: 24px;
+	text-align: center;
+	margin: 0 auto 15px;
+}
