@@ -1,1 +1,1 @@
-export type MiddlewareFunction = () => Promise<boolean | string>;
+export type GuardFunction = () => Promise<boolean | string>;

@@ -39,8 +39,9 @@ export const routeFactory = (routes: RouteContract[]): ReactNode => {
 			<Route
 				key={route.path}
 				exact
-				component={AsyncComponent(() =>
-					import(`@skeleton/web/${route.component}`),
+				component={AsyncComponent(
+					() => import(`@skeleton/web/${route.component}`),
+					route.canActivate,
 				)}
 				path={route.path}
 			/>
