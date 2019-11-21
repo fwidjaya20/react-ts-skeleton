@@ -1,11 +1,11 @@
-import { RouteContract } from '../contracts/route.contract';
+import { Route } from '../contracts/route.contract';
 import React, { ReactNode } from 'react';
-import { Route } from 'react-router-dom';
+import { Route as ReactRoute } from 'react-router-dom';
 import AsyncComponent from '@skeleton/shared/async-page/async.page';
 
 let collection: any = [];
 
-const parseRoute = (routes: RouteContract[], parent: RouteContract = null) => {
+const parseRoute = (routes: Route[], parent: Route = null) => {
 	routes.forEach((route) => {
 		if (!route.children || route.children.length === 0) {
 			if (!route.path.startsWith('/')) {
@@ -30,13 +30,13 @@ const parseRoute = (routes: RouteContract[], parent: RouteContract = null) => {
 	});
 };
 
-export const routeFactory = (routes: RouteContract[]): ReactNode => {
+export const routeFactory = (routes: Route[]): ReactNode => {
 	collection = [];
 	parseRoute(routes, null);
 
 	return collection.map((route) => {
 		return (
-			<Route
+			<ReactRoute
 				key={route.path}
 				exact
 				component={AsyncComponent(

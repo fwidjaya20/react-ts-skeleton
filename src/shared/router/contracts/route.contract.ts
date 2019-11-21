@@ -1,8 +1,8 @@
 import { GuardFunction } from './middleware.contract';
 
-export interface RouteContract {
+export interface Route {
 	path: string;
 	component?: string | null;
-	children?: Array<RouteContract>;
+	children?: Array<Route>;
 	canActivate?: Array<GuardFunction>;
 }

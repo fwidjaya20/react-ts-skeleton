@@ -1,6 +1,6 @@
-import { RouteContract } from '@skeleton/shared/router/contracts/route.contract';
+import { Route } from '@skeleton/shared/router/contracts/route.contract';
 
-const routes: RouteContract[] = [
+const routes: Route[] = [
 	{
 		path: '/login',
 		component: 'modules/auth/pages/login.page',
@@ -11,4 +11,4 @@ const routes: RouteContract[] = [
 	},
 ];
 
-export const AUTH_ROUTES: RouteContract[] = routes;
+export const AUTH_ROUTES: Route[] = routes;

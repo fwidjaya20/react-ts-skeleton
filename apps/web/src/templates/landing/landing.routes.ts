@@ -1,8 +1,8 @@
-import { RouteContract } from '@skeleton/shared/router/contracts/route.contract';
+import { Route } from '@skeleton/shared/router/contracts/route.contract';
 import { AUTH_ROUTES } from '@skeleton/web/modules/auth/pages/auth.routes';
 import { GuestGuard } from '@skeleton/domains/auth/guards/guest.guard';
 
-const routes: RouteContract[] = [
+const routes: Route[] = [
 	{
 		path: '/auth',
 		children: [...AUTH_ROUTES],
@@ -10,4 +10,4 @@ const routes: RouteContract[] = [
 	},
 ];
 
-export const LANDING_ROUTES: RouteContract[] = routes;
+export const LANDING_ROUTES: Route[] = routes;
