@@ -1,8 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 
 class AppTemplate extends PureComponent<any, any> {
 	render() {
-		return <div>App Template</div>;
+		return (
+			<Fragment>
+				<div> App Template </div>
+			</Fragment>
+		);
 	}
 }
 

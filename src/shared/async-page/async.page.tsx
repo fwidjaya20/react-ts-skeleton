@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { GuardFunction } from '@skeleton/shared/router/contracts/middleware.contract';
+import PreLoader from '@skeleton/shared/loader/pre.loader';
 
 const AsyncComponent = (component: Function, guards: GuardFunction[] = []) => {
 	return class extends Component<any, any> {
@@ -46,7 +47,7 @@ const AsyncComponent = (component: Function, guards: GuardFunction[] = []) => {
 		render() {
 			const { component } = this.state;
 
-			return component || <div> Loading ... </div>;
+			return component || <PreLoader />;
 		}
 
 		componentWillUnmount(): void {

@@ -1,0 +1,68 @@
+@import '../../../styles/variables';
+
+.preloader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+
+	.preload-animation {
+		position: relative;
+		width: 64px;
+		height: 64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.image {
+			width: 100%;
+			height: 100%;
+			margin-bottom: 10px;
+
+			> img {
+				width: inherit;
+				height: inherit;
+				object-fit: contain;
+			}
+		}
+
+		.loading-bar {
+			position: relative;
+			width: 100px;
+			height: 2px;
+			border-radius: 2px;
+			background-color: #cfcfcf;
+			overflow: hidden;
+			z-index: 1;
+			transform: rotateY(0);
+			transition: transform 0.3s ease-in;
+
+			.tile {
+				position: absolute;
+				width: 64px;
+				height: 100%;
+				transform: translate(-34px, 0);
+				border-radius: $box-radius;
+				background-color: $primary;
+				animation: preloading-animation 2.5s infinite ease;
+			}
+		}
+	}
+}
+
+@keyframes preloading-animation {
+	0%,
+	100% {
+		transform: translate(-34px, 0);
+	}
+	50% {
+		transform: translate(96px, 0);
+	}
+}
