@@ -35,9 +35,11 @@ const AsyncComponent = (component: Function, guards: GuardFunction[] = []) => {
 			}
 
 			if (this.mounted) {
-				this.setState({
-					component: <Component {...this.props} />,
-				});
+				setTimeout(() => {
+					this.setState({
+						component: <Component {...this.props} />,
+					});
+				}, 300);
 			}
 		}
 

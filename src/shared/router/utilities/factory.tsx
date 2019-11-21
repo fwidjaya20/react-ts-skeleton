@@ -7,25 +7,23 @@ let collection: any = [];
 
 const parseRoute = (routes: Route[], parent: Route = null) => {
 	routes.forEach((route) => {
-		if (!route.children || route.children.length === 0) {
-			if (!route.path.startsWith('/')) {
-				route.path = `/${route.path}`;
-			}
+		let item = Object.assign({}, route);
 
+		if (!item.children || item.children.length === 0) {
 			if (parent) {
-				route.path = parent.path + route.path;
+				item.path = parent.path + item.path;
 
 				if (parent.canActivate && parent.canActivate.length > 0) {
-					route.canActivate = [
+					item.canActivate = [
 						...parent.canActivate,
-						...(route.canActivate || []),
+						...(item.canActivate || []),
 					];
 				}
 			}
 
-			collection.push(route);
+			collection.push(item);
 		} else {
-			parseRoute(route.children, route);
+			parseRoute(item.children, item);
 		}
 	});
 };

@@ -1,8 +1,11 @@
 .ant-form {
 	.ant-form-item-control {
 		span {
-			font-size: 1.25rem;
-			font-weight: 500;
+			label {
+				font-size: 1.05rem;
+				font-weight: 500;
+				color: $black;
+			}
 		}
 	}
 }

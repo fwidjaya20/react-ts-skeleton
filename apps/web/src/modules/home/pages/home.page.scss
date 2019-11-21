@@ -1,0 +1,19 @@
+@import '../../../../../../styles/variables';
+
+.boxes {
+	position: relative;
+	margin-top: -24px;
+	display: block;
+
+	.box-item {
+		border-radius: $box-radius;
+		-webkit-box-shadow: $box-shadow;
+		box-shadow: $box-shadow;
+		background-color: #ffffff;
+		height: 160px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+}
