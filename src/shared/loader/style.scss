@@ -8,6 +8,7 @@
 	height: 100vh;
 	background-color: $white;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	z-index: 9999;
@@ -32,27 +33,27 @@
 				object-fit: contain;
 			}
 		}
+	}
 
-		.loading-bar {
-			position: relative;
-			width: 100px;
-			height: 2px;
-			border-radius: 2px;
-			background-color: #cfcfcf;
-			overflow: hidden;
-			z-index: 1;
-			transform: rotateY(0);
-			transition: transform 0.3s ease-in;
+	.loading-bar {
+		position: relative;
+		width: 100px;
+		height: 2px;
+		border-radius: 2px;
+		background-color: #cfcfcf;
+		overflow: hidden;
+		z-index: 1;
+		transform: rotateY(0);
+		transition: transform 0.3s ease-in;
 
-			.tile {
-				position: absolute;
-				width: 64px;
-				height: 100%;
-				transform: translate(-34px, 0);
-				border-radius: $box-radius;
-				background-color: $primary;
-				animation: preloading-animation 2.5s infinite ease;
-			}
+		.tile {
+			position: absolute;
+			width: 64px;
+			height: 100%;
+			transform: translate(-34px, 0);
+			border-radius: $box-radius;
+			background-color: $primary;
+			animation: preloading-animation 1.5s infinite ease;
 		}
 	}
 }

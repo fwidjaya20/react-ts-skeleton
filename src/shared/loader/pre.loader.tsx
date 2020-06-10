@@ -12,9 +12,9 @@ class PreLoader extends PureComponent<any, any> {
 							alt="Logo"
 						/>
 					</div>
-					<div className="loading-bar">
-						<div className="tile" />
-					</div>
+				</div>
+				<div className="loading-bar">
+					<div className="tile" />
 				</div>
 			</section>
 		);

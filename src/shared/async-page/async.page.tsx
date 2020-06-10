@@ -40,7 +40,7 @@ const AsyncComponent = (component: Function, guards: GuardFunction[] = []) => {
 					this.setState({
 						component: <Component {...this.props} />,
 					});
-				}, 300);
+				}, 1000);
 			}
 		}
 
