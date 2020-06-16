@@ -29,6 +29,7 @@ module.exports = [
 			extensions: ['.js', '.ts', '.tsx', '.scss'],
 			alias: {
 				'@skeleton/web': path.resolve(__dirname, 'apps', 'web', 'src'),
+				'@skeleton/cores': path.resolve(__dirname, 'src', 'cores'),
 				'@skeleton/domains': path.resolve(__dirname, 'src', 'domains'),
 				'@skeleton/shared': path.resolve(__dirname, 'src', 'shared'),
 				'@skeleton/style': path.resolve(__dirname, 'styles'),

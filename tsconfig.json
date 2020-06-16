@@ -15,6 +15,7 @@
 		"module": "esnext",
 		"paths": {
 			"@skeleton/web/*": ["apps/web/src/*"],
+			"@skeleton/cores/*": ["src/cores/*"],
 			"@skeleton/domains/*": ["src/domains/*"],
 			"@skeleton/shared/*": ["src/shared/*"]
 		},
