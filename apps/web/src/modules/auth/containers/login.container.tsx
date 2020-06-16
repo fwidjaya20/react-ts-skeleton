@@ -1,10 +1,25 @@
 import React, { Component, ReactNode, Fragment, RefObject } from 'react';
 import { Button } from 'antd';
 import Login from '@skeleton/web/modules/auth/components/form/login';
-import { withRouter } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
+import { AuthService } from '@skeleton/domains/auth/services/auth.service';
+import { AppState } from '@skeleton/web/store';
+import { connect } from 'react-redux';
 
-class LoginFormContainer extends Component<any, any> {
-	private formRef: RefObject<any> = React.createRef<any>();
+interface LoginFormContainerProps extends RouteComponentProps {
+	isLoading: boolean;
+}
+
+class LoginFormContainer extends Component<LoginFormContainerProps, any> {
+	private authService: AuthService;
+	private formRef: RefObject<any>;
+
+	constructor(props: LoginFormContainerProps) {
+		super(props);
+
+		this.authService = new AuthService();
+		this.formRef = React.createRef<any>();
+	}
 
 	render(): ReactNode {
 		return (
@@ -25,9 +40,9 @@ class LoginFormContainer extends Component<any, any> {
 	handleOnLogin = async () => {
 		await this.formRef.current
 			.validateFields()
-			.then((value) => {
+			.then(async (value) => {
 				console.log(value);
-				localStorage.setItem('_token', 'demo');
+				await this.authService.login(value);
 				this.props.history.replace('/');
 			})
 			.catch((error) => {
@@ -36,4 +51,8 @@ class LoginFormContainer extends Component<any, any> {
 	};
 }
 
-export default withRouter(LoginFormContainer);
+const mapStateToProps = (state: AppState) => ({
+	isLoading: state.auth.authLoading,
+});
+
+export default connect(mapStateToProps)(withRouter(LoginFormContainer));
